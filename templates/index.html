@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <link rel="icon" type="image/x-icon" href="../static/images/favicon.jpeg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Itinerary Planner</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Left Section: Form -->
+        <div class="form-container">
+            <h2>Plan Your Trip</h2>
+            <form id="itineraryForm">
+                <div class="form-group">
+                    <label for="destination">Destination</label>
+                    <input id="destination" type="text" placeholder="Enter destination" required>
+                </div>
+                <div class="form-group">
+                    <label for="start-date">Start Date</label>
+                    <input id="start-date" type="date" required>
+                </div>
+                <div class="form-group">
+                    <label for="trip-days">Trip Duration (Days)</label>
+                    <input id="trip-days" type="number" min="1" max="30" required>
+                </div>
+                <div class="form-group">
+                    <label for="interests">Interests</label>
+                    <textarea id="interests" rows="5" placeholder="e.g., food, hiking, history" required></textarea>
+                </div>
+                <button type="submit" class="submit-button">Generate Itinerary</button>
+            </form>
+        </div>
+
+        <!-- Right Section: Results -->
+        <div class="results-container">
+            <ul id="itineraryTabs" class="tabs"></ul>
+            <ul id="itineraryTabContent" class="tab-content"></ul>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div id="loadingOverlay" class="loading-overlay">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <h3>Loading your itinerary... Please wait.</h3>
+        </div>
+    </div>
+
+    <script async src="https://maps.googleapis.com/maps/api/js?key={{ google_maps_api_key }}"></script>
+    <script src="/static/js/scripts.js"></script>
+</body>
+</html>
